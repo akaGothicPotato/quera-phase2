@@ -4,15 +4,57 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="./src/style.css" />
-    <title>Phase 2</title>
+    <title>کوئرا لیست</title>
   </head>
   <body>
-    <nav id="nav">
-      <!-- TODO: complete nav bar -->
-    </nav>
+    <header class="sticky top-0">
+      <nav id="nav">
+        <aside class="m-3 rounded-b-lg shadow">
+          <ul class="relative flex justify-center p-3">
+            <li>
+              <img
+                class="sm:hidden dark:hidden absolute top-3 right-3"
+                src="./src/svgs light mode/menu.svg"
+                alt="trigram"
+              />
+              <img
+                class="hidden max-sm:dark:block absolute top-3 right-4"
+                src="./src/svgs dark mode/menu.svg"
+                alt="trigram"
+              />
+            </li>
+            <li class="font-bold text-base">کوئرا لیست</li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
     <main id="main">
       <!-- TODO: complete main -->
+      <article class="mx-4 my-2">
+        <div class="inline-flex gap-4 justify-start items-center">
+          <img
+            class="rounded-full self-center row-span-2 size-14 object-cover"
+            src="./src/img/77dd64be56b77b645113191065f1ff7b.png"
+            alt="profile pic"
+          />
+          <div class="sm:col-span-2">
+            <h4
+              class="text-right font-extrabold text-lg col-span-3 font-Vazirmatn"
+            >
+              سلام، رویا
+            </h4>
+            <h6
+              class="text-Neutral-700 text-right font-semibold text-sm col-span-3 font-Rubik"
+            >
+              امروز، سه‌شنبه، ۵ بهمن ۱۴۰۲
+            </h6>
+          </div>
+        </div>
+      </article>
     </main>
   </body>
   <script type="module" src="/src/main.js"></script>
