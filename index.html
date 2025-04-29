@@ -13,7 +13,7 @@
   <body>
     <header class="sticky top-0">
       <nav id="nav">
-        <aside class="m-3 rounded-b-lg shadow-md">
+        <aside class="dark:bg-bg-nav-dark m-3 rounded-b-lg shadow-md">
           <ul class="relative flex justify-center p-3">
             <li>
               <img
@@ -34,7 +34,9 @@
     </header>
     <main id="main">
       <!-- TODO: complete main -->
-      <article class="mx-4 my-2">
+      <article
+        class="mx-4 my-2 pb-5 border-b border-Neutral-200 dark:border-none"
+      >
         <div class="inline-flex gap-4 justify-start items-center">
           <img
             class="rounded-full self-center row-span-2 size-14 object-cover"
@@ -42,19 +44,40 @@
             alt="profile pic"
           />
           <div class="sm:col-span-2">
-            <h4
-              class="text-right font-extrabold text-lg col-span-3 font-Vazirmatn"
-            >
+            <h4 class="text-right font-extrabold text-lg col-span-3">
               سلام، رویا
             </h4>
-            <h6
-              class="text-Neutral-700 text-right font-semibold text-sm col-span-3 font-Rubik"
+            <h5
+              class="text-Neutral-700 text-right font-semibold text-sm col-span-3"
             >
               امروز، سه‌شنبه، ۵ بهمن ۱۴۰۲
-            </h6>
+            </h5>
           </div>
         </div>
       </article>
+      <section class="my-8 mx-4">
+        <article>
+          <h4 class="text-right font-extrabold text-base">تسک‌های امروز</h4>
+          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+            <!-- ۳ باید در نهایت با توجه به تعداد متغیر صحیح جایگذین شود -->
+            ۳ <span class="font-normal"> تسک را باید انجام دهید. </span>
+          </h5>
+        </article>
+        <article
+          class="my-4 p-4 inline-flex gap-2 border-dashed border border-Oil04 rounded-[10px] dark:bg-bg-nav-dark dark:border-bg-border-dashed-dark w-full"
+        >
+          <img src="./src/svgs light mode/add.svg" alt="add" />
+          <h6 class="text-sm font-semibold text-primary">افزودن وظیفه جدید</h6>
+        </article>
+      </section>
+      <section class="mx-4">
+        <article>
+          <h4 class="text-right font-extrabold text-base">تسک‌های انجام شده</h4>
+          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+            ۳ <span class="font-normal"> تسک را انجام داده اید. </span>
+          </h5>
+        </article>
+      </section>
     </main>
   </body>
   <script type="module" src="/src/main.js"></script>

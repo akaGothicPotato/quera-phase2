@@ -33,6 +33,8 @@
   --color-background-dark: #040810;
   --color-on-background-dark: #e6e9ef;
   --color-surface-light: #e6e9ef;
+  --color-bg-nav-dark: #091120;
+  --color-bg-border-dashed-dark: #203e62;
 
   /* additional colors */
   --color-success: #90f677;
@@ -45,7 +47,10 @@
   --color-bg-low: #c3fff1;
 
   /* Neutral colors */
+  --color-Neutral-200: #f5f6f8;
   --color-Neutral-700: #7d7d7f;
+
+  --color-Oil04: #cccccc;
 
   /* fonts */
   --font-Vazirmatn: "Vazirmatn";
