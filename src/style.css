@@ -17,6 +17,8 @@
 @theme {
   /* color palette: */
 
+  /* --shadow-blur: 0 35px 35px rgba(0, 0, 0, 0.25);********* */
+
   /* primary */
   --color-primary: #2c7ef8;
   --color-primary-hover-light: #075cd9;
@@ -42,6 +44,7 @@
   --color-low: #11a483;
   --color-bg-low: #c3fff1;
 
+  /* Neutral colors */
   --color-Neutral-700: #7d7d7f;
 
   /* fonts */
