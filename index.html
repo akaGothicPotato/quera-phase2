@@ -1,18 +1,281 @@
 <!DOCTYPE html>
-<html lang="fa-IR" dir="rtl">
+<html lang="fa-IR" dir="rtl" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="./src/style.css" />
-    <title>Phase 2</title>
+    <title>کوئرالیست</title>
   </head>
   <body>
-    <nav id="nav">
-      <!-- TODO: complete nav bar -->
-    </nav>
-    <main id="main">
+    <!-- head -->
+    <header class="sticky top-0">
+      <nav id="nav">
+        <!-- mobile nav -->
+        <ul
+          id="sm-nav"
+          class="relative flex justify-between items-center p-3 small dark:bg-nav-dark m-3 rounded-b-lg shadow-md">
+          <li class="flex-1 text-center font-bold text-base">کوئرا لیست</li>
+          <li class="absolute right-3 top-3">
+            <img
+              id="trigram-light"
+              class="dark:hidden"
+              src="./src/svgs light mode/menu.svg"
+              alt="trigram" />
+            <img
+              id="trigram-dark"
+              class="hidden dark:block"
+              src="./src/svgs dark mode/menu.svg"
+              alt="trigram dark" />
+          </li>
+        </ul>
+        <!-- lg nav -->
+        <aside
+          id="lg-nav"
+          class="lg:bg-background-light lg:dark:bg-nav-dark lg:fixed lg:left-[1148px] h-[984px] w-[272px] rounded-2xl top-5 relative">
+          <!-- user -->
+          <ul>
+            <li
+              id="user"
+              class="mx-4 my-2 pb-5 border-b border-Neutral-200 dark:border-none">
+              <div class="inline-flex gap-4 justify-start items-center">
+                <img
+                  id="profile-pic"
+                  class="rounded-full self-center row-span-2 size-14 object-cover"
+                  src="./src/img/77dd64be56b77b645113191065f1ff7b.png"
+                  alt="profile pic" />
+                <div class="sm:col-span-2">
+                  <h4
+                    id="user-name"
+                    class="text-right font-extrabold text-lg col-span-3">
+                    سلام، رویا
+                  </h4>
+                  <h5
+                    id="date"
+                    class="text-Neutral-700 text-right font-semibold text-sm col-span-3">
+                    امروز، سه‌شنبه، ۵ بهمن ۱۴۰۲
+                  </h5>
+                </div>
+              </div>
+            </li>
+            <!-- pages list -->
+            <div
+              id="nav-wrapper"
+              class="bg-background-light dark:bg-nav-dark max-lg:fixed top-0 bottom-0 h-full z-50 flex flex-col w-64 transition-all duration-300 ease-in-out -right-64 lg:right-0">
+              <div
+                class="small flex justify-between items-center w-[calc(100%-2rem)] mx-auto h-12 p-3 my-3"
+                id="nave-mobile-head">
+                <h2 class="font-bold text-base">کوئرا لیست</h2>
+                <img
+                  class="w-6 h-6 dark:hidden"
+                  src="./src/svgs light mode/close-circle.svg"
+                  alt="close"
+                  id="close-nav-light" />
+                <img
+                  class="w-6 h-6 hidden dark:block"
+                  src="./src/svgs dark mode/close-circle.svg"
+                  alt="close"
+                  id="close-nav-dark" />
+              </div>
+              <div id="nav-items" class="flex flex-col gap-4">
+                <li>
+                  <button class="nav-group">
+                    <p>خانه</p>
+                    <img
+                      src="./src/svgs light mode/home-2.svg"
+                      alt="home"
+                      id="home-icon-light"
+                      class="dark:hidden icon-sm" />
+                    <img
+                      src="./src/svgs dark mode/home-2.svg"
+                      alt="home"
+                      id="home-icon-dark"
+                      class="hidden dark:block icon-sm" />
+                  </button>
+                </li>
+                <li>
+                  <button class="nav-group">
+                    <p>تسک‌ها</p>
+                    <img
+                      id="task-icon-light"
+                      class="dark:hidden icon-sm"
+                      src="./src/svgs light mode/task-square.svg"
+                      alt="tasks" />
+                    <img
+                      id="task-icon-dark"
+                      class="hidden dark:block icon-sm"
+                      src="./src/svgs dark mode/task-square.svg"
+                      alt="tasks" />
+                  </button>
+                </li>
+                <li>
+                  <button class="nav-group">
+                    <p>تقویم</p>
+                    <img
+                      src="./src/svgs light mode/calendar.svg"
+                      alt="calendar"
+                      id="calendar-icon-light"
+                      class="dark:hidden icon-sm" />
+                    <img
+                      src="./src/svgs dark mode/calendar.svg"
+                      alt="calendar"
+                      id="calendar-icon-dark"
+                      class="hidden dark:block icon-sm" />
+                  </button>
+                </li>
+                <li>
+                  <button class="nav-group">
+                    <p>گزارشات</p>
+                    <img
+                      src="./src/svgs light mode/arrange-square-2.svg"
+                      alt="arrange square icon"
+                      id="arrange-square-light"
+                      class="dark:hidden icon-sm" />
+                    <img
+                      src="./src/svgs dark mode/arrange-square-2.svg"
+                      alt="arrange square icon"
+                      id="arrange-square-dark"
+                      class="hidden dark:block icon-sm" />
+                  </button>
+                </li>
+                <li>
+                  <button class="nav-group">
+                    <p>تنظیمات</p>
+                    <img
+                      src="./src/svgs light mode/setting.svg"
+                      alt="settings icon"
+                      id="setting-icon-light"
+                      class="dark:hidden icon-sm" />
+                    <img
+                      src="./src/svgs dark mode/setting.svg"
+                      alt="settings icon"
+                      id="setting-icon-dark"
+                      class="hidden dark:block icon-sm" />
+                  </button>
+                </li>
+                <li>
+                  <button class="nav-group">
+                    <p>پشتیبانی</p>
+                    <img
+                      src="./src/svgs light mode/24-support.svg"
+                      alt="support"
+                      id="support-icon-light"
+                      class="dark:hidden icon-sm" />
+                    <img
+                      src="./src/svgs dark mode/24-support.svg"
+                      alt="support"
+                      id="support-icon-dark"
+                      class="hidden dark:block icon-sm" />
+                  </button>
+                </li>
+                <li>
+                  <button class="nav-group">
+                    <p>پروفایل</p>
+                    <img
+                      src="./src/svgs light mode/profile.svg"
+                      alt=" profile"
+                      id="profile-icon-light"
+                      class="dark:hidden icon-sm" />
+                    <img
+                      src="./src/svgs dark mode/profile.svg"
+                      alt="profile"
+                      id="profile-icon-dark"
+                      class="hidden dark:block icon-sm" />
+                  </button>
+                </li>
+              </div>
+              <section
+                id="downside-items"
+                class="mt-auto mb-9 absolute bottom-9 right-auto">
+                <!-- theme btns -->
+                <!-- !not adjusted on lg breakpoint -->
+                <div
+                  id="themeing"
+                  role="group"
+                  class="flex bg-btn-group-light dark:bg-btn-group-dark w-52 h-11 mx-auto items-center justify-evenly rounded-lg gap-1">
+                  <button
+                    type="button"
+                    id="theme-light"
+                    class="bg-btn-group-active-light dark:bg-transparent dark:hover:bg-btn-group-active-dark w-24 h-8 rounded-md flex justify-evenly items-center transition-colors duration-300 ease-in-out">
+                    <img
+                      src="./src/svgs light mode/sun.svg"
+                      alt="light"
+                      id="sun-icon-light"
+                      class="dark:hidden" />
+                    <img
+                      src="./src/svgs dark mode/sun.svg"
+                      alt="light"
+                      id="sun-icon-dark"
+                      class="hidden dark:block" />
+                    <p>روشن</p>
+                  </button>
+                  <button
+                    type="button"
+                    id="theme-dark"
+                    class="bg-transparent dark:bg-btn-group-active-dark w-24 h-8 rounded-md flex justify-evenly items-center transition-colors duration-300 ease-in-out">
+                    <img
+                      src="./src/svgs light mode/moon.svg"
+                      alt="dark"
+                      id="moon-icon-light"
+                      class="dark:hidden" />
+                    <img
+                      src="./src/svgs dark mode/moon.svg"
+                      alt="dark"
+                      id="moon-icon-dark"
+                      class="hidden dark:block" />
+                    <p>تاریک</p>
+                  </button>
+                </div>
+                <div
+                  id="divider"
+                  class="h-px flex-1 bg-gray-300 dark:bg-gray-600 w-52 my-2 mx-auto"></div>
+                <!-- log out -->
+                <button id="log-out" class="nav-group">
+                  <p>خروج</p>
+                  <img
+                    src="./src/svgs light mode/logout.svg"
+                    alt="log out"
+                    id="logout-icon-light"
+                    class="dark:hidden" />
+                  <img
+                    src="./src/svgs dark mode/logout.svg"
+                    alt="log out"
+                    id="logout-icon-dark"
+                    class="hidden dark:block" />
+                </button>
+              </section>
+            </div>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+    <main id="main" class="">
       <!-- TODO: complete main -->
+      <section class="mx-4">
+        <article>
+          <h4 class="text-right font-extrabold text-base">تسک‌های امروز</h4>
+          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+            <!-- ۳ باید در نهایت با توجه به تعداد متغیر صحیح جایگذین شود -->
+            <span class="font-normal"> تسک را باید انجام دهید. </span>
+          </h5>
+        </article>
+        <article
+          class="my-4 p-4 inline-flex gap-2 border-dashed border border-Oil04 rounded-[10px] dark:bg-bg-nav-dark dark:border-bg-border-dashed-dark w-full">
+          <img src="./src/svgs light mode/add.svg" alt="add" />
+          <h6 class="text-sm font-semibold text-primary">افزودن وظیفه جدید</h6>
+        </article>
+      </section>
+      <section class="mx-4">
+        <article>
+          <h4 class="text-right font-extrabold text-base">تسک‌های انجام شده</h4>
+          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+            ۳ <span class="font-normal"> تسک را انجام داده اید. </span>
+          </h5>
+        </article>
+      </section>
     </main>
   </body>
   <script type="module" src="/src/main.js"></script>

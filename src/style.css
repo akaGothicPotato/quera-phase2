@@ -1,8 +1,30 @@
+/* Rubik Font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap");
+/* Vazirmatn Font */
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.vazirmatn-<uniquifier > {
+  font-family: "Vazirmatn", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.rubik-<uniquifier > {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 
 @theme {
   /* color palette: */
+
+  /* --shadow-blur: 0 35px 35px rgba(0, 0, 0, 0.25);********* */
 
   /* primary */
   --color-primary: #2c7ef8;
@@ -19,17 +41,68 @@
   --color-on-background-dark: #e6e9ef;
   --color-surface-light: #e6e9ef;
 
+  --color-nav-dark: #091120;
+  --color-nav-light: #ffffff;
+  --color-hover-dark: #041933;
+  --color-hover-light: #f5faff;
+
+  --color-bg-border-dashed-dark: #203e62;
+
   /* additional colors */
   --color-success: #90f677;
   --color-error: #e63946;
+  --color-high: #ff5f37;
+  --color-bg-high: #ffe2db;
+  --color-medium: #ffaf37;
+  --color-bg-medium: #ffefd6;
+  --color-low: #11a483;
+  --color-bg-low: #c3fff1;
+  --color-btn-group-dark: #0c1b31;
+  --color-btn-group-light: #f7f7f7;
+  --color-btn-group-active-light: #ffffff;
+  --color-btn-group-active-dark: #002247;
+
+  /* Neutral colors */
+  --color-Neutral-200: #f5f6f8;
+  --color-Neutral-700: #7d7d7f;
+
+  --color-Oil04: #cccccc;
 
   /* fonts */
-  --font-primary: "Vazirmatn", "sans-serif";
+  --font-primary: "Vazirmatn";
+  --font-secondary: "Rubik";
 }
 
 @layer base {
   /* default styles  */
+  * {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply bg-background-light dark:bg-background-dark text-on-background-light dark:text-on-background-dark font-primary;
+    @apply bg-background-light text-on-background-light font-primary;
+    @apply dark:bg-background-dark  dark:text-on-background-dark;
+  }
+
+  body.overflow-hidden {
+    @apply overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .small {
+    @apply lg:hidden;
+  }
+
+  .large {
+    @apply max-lg:hidden;
+  }
+
+  .nav-group {
+    @apply flex flex-row-reverse justify-end items-center w-[calc(100%-2rem)] mx-auto px-3 py-2 gap-2 hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg transition-colors;
+  }
+
+  .icon-sm {
+    @apply w-5 h-5;
   }
 }
