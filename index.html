@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="./src/style.css" />
     <title>کوئرالیست</title>
   </head>
-  <body>
+  <body class="relative">
     <!-- head -->
     <header class="sticky top-0">
       <nav id="nav">
         <!-- mobile nav -->
         <ul
           id="sm-nav"
-          class="relative flex justify-between items-center p-3 small dark:bg-nav-dark m-3 rounded-b-lg shadow-md">
+          class="flex justify-between items-center p-3 small dark:bg-nav-dark m-3 rounded-b-lg shadow-md">
           <li class="flex-1 text-center font-bold text-base">کوئرا لیست</li>
           <li class="absolute right-3 top-3">
             <img
@@ -35,7 +35,7 @@
         <!-- lg nav -->
         <aside
           id="lg-nav"
-          class="lg:bg-background-light lg:dark:bg-nav-dark lg:fixed lg:left-[1148px] h-[984px] w-[272px] rounded-2xl top-5 relative">
+          class="lg:bg-background-light lg:dark:bg-nav-dark lg:fixed lg:right-5 h-[96%] w-[272px] rounded-2xl top-5 relative">
           <!-- user -->
           <ul>
             <li
@@ -189,7 +189,7 @@
               </div>
               <section
                 id="downside-items"
-                class="mt-auto mb-9 absolute bottom-9 right-auto">
+                class="mt-auto mb-9 w-full lg:flex lg:flex-col lg:items-center absolute bottom-0">
                 <!-- theme btns -->
                 <!-- !not adjusted on lg breakpoint -->
                 <div
@@ -231,9 +231,9 @@
                 </div>
                 <div
                   id="divider"
-                  class="h-px flex-1 bg-gray-300 dark:bg-gray-600 w-52 my-2 mx-auto"></div>
+                  class="h-px bg-gray-300 dark:bg-gray-600 w-52 my-2 mx-auto"></div>
                 <!-- log out -->
-                <button id="log-out" class="nav-group">
+                <button id="log-out" class="nav-group nav-group w-52 mx-auto">
                   <p>خروج</p>
                   <img
                     src="./src/svgs light mode/logout.svg"
@@ -254,7 +254,7 @@
     </header>
     <main id="main" class="">
       <!-- TODO: complete main -->
-      <section class="mx-4">
+      <section class="">
         <article>
           <h4 class="text-right font-extrabold text-base">تسک‌های امروز</h4>
           <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
