@@ -1,9 +1,9 @@
-/* Rubik Font */
+/* Rubik Font 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap");
-/* Vazirmatn Font */
+Vazirmatn Font
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
 
-@import "tailwindcss";
+@import "tailwindcss";*/
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -40,6 +40,9 @@
   --color-background-dark: #040810;
   --color-on-background-dark: #e6e9ef;
   --color-surface-light: #e6e9ef;
+  --color-bg-nav-dark: #091120;
+
+  --color-bg-border-dashed-dark: #203e62;
 
   --color-nav-dark: #091120;
   --color-nav-light: #ffffff;
@@ -61,6 +64,7 @@
   --color-btn-group-light: #f7f7f7;
   --color-btn-group-active-light: #ffffff;
   --color-btn-group-active-dark: #002247;
+
 
   /* Neutral colors */
   --color-Neutral-200: #f5f6f8;
@@ -104,5 +108,6 @@
 
   .icon-sm {
     @apply w-5 h-5;
+
   }
 }
