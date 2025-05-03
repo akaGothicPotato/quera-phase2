@@ -1,8 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
 @import "tailwindcss";
+
+.vazirmatn-<uniquifier > {
+  font-family: "Vazirmatn", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.rubik-<uniquifier > {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 
 @theme {
   /* color palette: */
+
+  /* --shadow-blur: 0 35px 35px rgba(0, 0, 0, 0.25);********* */
 
   /* primary */
   --color-primary: #2c7ef8;
@@ -18,18 +33,34 @@
   --color-background-dark: #040810;
   --color-on-background-dark: #e6e9ef;
   --color-surface-light: #e6e9ef;
+  --color-bg-nav-dark: #091120;
+
+  --color-bg-border-dashed-dark: #203e62;
 
   /* additional colors */
   --color-success: #90f677;
   --color-error: #e63946;
+  --color-high: #ff5f37;
+  --color-bg-high: #ffe2db;
+  --color-medium: #ffaf37;
+  --color-bg-medium: #ffefd6;
+  --color-low: #11a483;
+  --color-bg-low: #c3fff1;
+
+  /* Neutral colors */
+  --color-Neutral-200: #f5f6f8;
+  --color-Neutral-700: #7d7d7f;
+
+  --color-Oil04: #cccccc;
 
   /* fonts */
-  --font-primary: "Vazirmatn", "sans-serif";
+  --font-Vazirmatn: "Vazirmatn";
+  --font-Rubik: "Rubik";
 }
 
 @layer base {
   /* default styles  */
   body {
-    @apply bg-background-light dark:bg-background-dark text-on-background-light dark:text-on-background-dark font-primary;
+    @apply bg-background-light dark:bg-background-dark text-on-background-light dark:text-on-background-dark font-Vazirmatn;
   }
 }

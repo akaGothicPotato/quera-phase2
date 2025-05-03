@@ -2,17 +2,282 @@
 <html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/web logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="./src/style.css" />
-    <title>Phase 2</title>
+    <title>کوئرا لیست</title>
   </head>
   <body>
-    <nav id="nav">
-      <!-- TODO: complete nav bar -->
-    </nav>
+    <header class="sticky top-0">
+      <nav id="nav">
+        <aside class="dark:bg-bg-nav-dark m-3 rounded-b-lg shadow-md">
+          <ul class="relative flex justify-center p-3">
+            <li>
+              <img
+                class="sm:hidden dark:hidden absolute top-3 right-3"
+                src="./src/svgs light mode/menu.svg"
+                alt="trigram"
+              />
+              <img
+                class="hidden max-sm:dark:block absolute top-3 right-4"
+                src="./src/svgs dark mode/menu.svg"
+                alt="trigram"
+              />
+            </li>
+            <li class="font-bold text-base">کوئرا لیست</li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
     <main id="main">
-      <!-- TODO: complete main -->
+      <article
+        class="mx-4 my-2 pb-5 border-b border-Neutral-200 dark:border-none"
+      >
+        <div class="inline-flex gap-4 justify-start items-center">
+          <img
+            class="rounded-full self-center row-span-2 size-14 object-cover"
+            src="./src/img/77dd64be56b77b645113191065f1ff7b.png"
+            alt="profile pic"
+          />
+          <div class="sm:col-span-2">
+            <h4 class="text-right font-extrabold text-lg col-span-3">
+              سلام، رویا
+            </h4>
+            <h5
+              class="text-Neutral-700 text-right font-semibold text-sm col-span-3"
+            >
+              امروز، سه‌شنبه، ۵ بهمن ۱۴۰۲
+            </h5>
+          </div>
+        </div>
+      </article>
+      <section class="my-8 mx-4">
+        <!-- tasks status -->
+        <article>
+          <h4 class="text-right font-extrabold text-base">تسک‌های امروز</h4>
+          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+            <!-- ۳ باید در نهایت با توجه به تعداد متغیر صحیح جایگذین شود -->
+            ۳ <span class="font-normal"> تسک را باید انجام دهید. </span>
+          </h5>
+        </article>
+        <!-- add new task -->
+        <article
+          class="relative my-4 p-4 inline-flex gap-2 border-dashed border border-Oil04 rounded-[10px] dark:bg-bg-nav-dark dark:border-bg-border-dashed-dark w-full"
+        >
+          <img src="./src/svgs light mode/add.svg" alt="add" />
+          <h6
+            id="addTask"
+            class="absolute right-12 top-4.5 text-sm font-semibold text-primary"
+          >
+            افزودن وظیفه جدید
+          </h6>
+        </article>
+        <!-- tasks list -->
+        <ul>
+          <li
+            class="relative mb-4 border border-Neutral-200 rounded-[10px] dark:bg-bg-nav-dark dark:border-hidden w-full"
+          >
+            <div
+              class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-high"
+            ></div>
+            <div class="py-3 pl-4 pr-6">
+              <!-- task title + checkbox + task options -->
+              <div class="flex gap-4 mb-1">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
+                />
+                <span class="text-gray-800 font-semibold text-sm"
+                  >جلسه با مدیران پروژه</span
+                >
+                <img
+                  class="mr-auto cursor-pointer"
+                  src="./src/svgs light mode/Frame 33317.svg"
+                  alt="more_options"
+                />
+              </div>
+              <!-- priority of task -->
+              <div class="mb-4">
+                <span
+                  class="mr-9 bg-bg-high text-high text-[10px] font-semibold rounded-sm px-2 py-0.5"
+                  >بالا</span
+                >
+              </div>
+              <!-- task description -->
+              <p class="mr-9 text-Neutral-700 text-xs">
+                جلسه با محسن یگانه و مریم جلالی
+              </p>
+            </div>
+          </li>
+
+          <li
+            class="relative mb-4 border border-Neutral-200 rounded-[10px] dark:bg-bg-nav-dark dark:border-hidden w-full"
+          >
+            <div
+              class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-medium"
+            ></div>
+            <div class="py-3 pl-4 pr-6">
+              <!-- task title + checkbox + task options -->
+              <div class="flex gap-4 mb-1">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
+                />
+                <span class="text-gray-800 font-semibold text-sm"
+                  >خرید میوه و سبزیجات و لبنیات برای خانه</span
+                >
+                <img
+                  class="mr-auto cursor-pointer"
+                  src="./src/svgs light mode/Frame 33317.svg"
+                  alt="more_options"
+                />
+              </div>
+              <!-- priority of task -->
+              <div class="mb-4">
+                <span
+                  class="mr-9 bg-bg-medium text-medium text-[10px] font-semibold rounded-sm px-2 py-0.5"
+                  >متوسط</span
+                >
+              </div>
+              <!-- task description -->
+              <p class="mr-9 text-Neutral-700 text-xs">
+                سوپرمارکت یاران دریایی
+              </p>
+            </div>
+          </li>
+
+          <li
+            class="relative mb-4 border border-Neutral-200 rounded-[10px] dark:bg-bg-nav-dark dark:border-hidden w-full"
+          >
+            <div
+              class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-low"
+            ></div>
+            <div class="py-3 pl-4 pr-6">
+              <!-- task title + checkbox + task options -->
+              <div class="flex gap-4 mb-1">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
+                />
+                <span class="text-gray-800 font-semibold text-sm"
+                  >جلسه با مدیران پروژه</span
+                >
+                <img
+                  class="mr-auto cursor-pointer"
+                  src="./src/svgs light mode/Frame 33317.svg"
+                  alt="more_options"
+                />
+              </div>
+              <!-- priority of task -->
+              <div class="mb-4">
+                <span
+                  class="mr-9 bg-bg-low text-low text-[10px] font-semibold rounded-sm px-2 py-0.5"
+                  >پایین</span
+                >
+              </div>
+              <!-- task description -->
+              <p class="mr-9 text-Neutral-700 text-xs">
+                جلسه با محسن یگانه و مریم جلالی
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- Done Tasks -->
+      <section class="mx-4">
+        <!-- head -->
+        <article class="mb-4">
+          <h4 class="text-right font-extrabold text-base">تسک‌های انجام شده</h4>
+          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+            ۳ <span class="font-normal"> تسک انجام شده است. </span>
+          </h5>
+        </article>
+        <!-- Done Tasks -->
+        <ul>
+          <li
+            class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
+          >
+            <div
+              class="absolute top-2 right-0 bottom-2 w-1 rounded-l-lg bg-medium"
+            ></div>
+
+            <div
+              class="flex flex-row items-center justify-start px-4 py-5 gap-4"
+            >
+              <!-- dark bordor color? -->
+              <input
+                checked
+                class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light"
+                type="checkbox"
+              />
+              <p class="font-semibold text-sm line-through">
+                خرید میوه و سبزیجات و لبنیات برای خانه
+              </p>
+              <!-- align? dark icon color ? -->
+              <img
+                class="mr-auto"
+                src="./src/svgs light mode/Frame 33317.svg"
+                alt=""
+              />
+            </div>
+          </li>
+
+          <li
+            class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
+          >
+            <div
+              class="absolute top-2 right-0 bottom-2 w-1 rounded-l-lg bg-high"
+            ></div>
+
+            <div
+              class="flex flex-row items-center justify-start px-4 py-5 gap-4"
+            >
+              <input
+                checked
+                class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light"
+                type="checkbox"
+              />
+              <p class="font-semibold text-sm line-through">
+                تماس با مبل فروشی در مورد تاخیر در ارسال
+              </p>
+              <img
+                class="mr-auto"
+                src="./src/svgs light mode/Frame 33317.svg"
+                alt=""
+              />
+            </div>
+          </li>
+
+          <li
+            class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
+          >
+            <div
+              class="absolute top-2 right-0 bottom-2 w-1 rounded-l-lg bg-low"
+            ></div>
+
+            <div
+              class="flex flex-row items-center justify-start px-4 py-5 gap-4"
+            >
+              <input
+                checked
+                class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-Oil04"
+                type="checkbox"
+              />
+              <p class="font-semibold text-sm line-through">
+                جلسه با مرتضی در مورد مصاحبه با کارآموز ادمین پنل
+              </p>
+              <img
+                class="mr-auto"
+                src="./src/svgs light mode/Frame 33317.svg"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
   </body>
   <script type="module" src="/src/main.js"></script>
