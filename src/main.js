@@ -40,6 +40,7 @@ document.addEventListener("click", (event) => {
 });
 // nav handle end
 
+// darkMode toggle:
 const html = document.querySelector("html");
 const classes = html.classList;
 
@@ -48,6 +49,7 @@ darkMode.addEventListener("click", () => {
   classes.toggle("dark");
 });
 
+// addTask initiate:
 document
   .getElementById("addTaskInitiate")
   .addEventListener("click", function (e) {
@@ -131,55 +133,3 @@ document
       this.replaceWith(newElement);
     }
   });
-// document
-//   .getElementById("addTaskInitiate")
-//   .addEventListener("click", function (e) {
-//     // Prevent the click from triggering on child elements
-//     if ((e.target.Id = "addTaskInitiate")) {
-//       const newElement = document.createElement("article");
-//       newElement.classList.add(
-//         "relative",
-//         "mb-4",
-//         "border",
-//         "border-Neutral-250",
-//         "rounded-[10px]",
-//         "dark:bg-bg-nav-dark",
-//         "dark:border-hidden",
-//         "w-full",
-//         "shadow-blur"
-//       );
-
-//       newElement.innerHTML = `
-//       <div class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-high"></div>
-//       <div class="py-3 pl-4 pr-6">
-//         <!-- task title + checkbox + task options -->
-//         <div class="flex gap-4 mb-1">
-//           <input
-//             type="checkbox"
-//             class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
-//           />
-//           <span class="text-gray-800 font-semibold text-sm">جلسه با مدیران پروژه</span>
-//           <img
-//             class="mr-auto cursor-pointer"
-//             src="./src/svgs light mode/Frame 33317.svg"
-//             alt="more_options"
-//           />
-//         </div>
-//         <!-- priority of task -->
-//         <div class="mb-4">
-//           <span class="mr-9 bg-bg-high text-high text-[10px] font-semibold rounded-sm px-2 py-0.5">بالا</span>
-//         </div>
-//         <!-- task description -->
-//         <p class="mr-9 text-Neutral-700 text-xs">جلسه با محسن یگانه و مریم جلالی</p>
-//       </div>
-//     `;
-
-//       // Insert the new element after the button
-//       //   this.insertAdjacentElement("afterend", newElement);
-
-//       // Or if you want to replace the button completely:
-//       this.replaceWith(newElement);
-//     }
-//   });
-
-// document.getElementById
