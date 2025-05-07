@@ -322,7 +322,7 @@
           </h6>
         </article>
         <!-- tasks list -->
-        <ul>
+        <ul id="todo-list">
           <li
             class="relative mb-4 border border-Neutral-250 rounded-[10px] dark:bg-bg-nav-dark dark:border-hidden w-full shadow-blur"
           >
@@ -333,10 +333,11 @@
               <!-- task title + checkbox + task options -->
               <div class="flex gap-4 mb-1">
                 <input
+                  id="task-1-checkbox"
                   type="checkbox"
                   class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
                 />
-                <span class="text-gray-800 font-semibold text-sm"
+                <span class="text-gray-800 font-semibold text-sm task-title"
                   >جلسه با مدیران پروژه</span
                 >
                 <img
@@ -372,7 +373,7 @@
                   type="checkbox"
                   class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
                 />
-                <span class="text-gray-800 font-semibold text-sm"
+                <span class="text-gray-800 font-semibold text-sm task-title"
                   >خرید میوه و سبزیجات و لبنیات برای خانه</span
                 >
                 <img
@@ -408,7 +409,7 @@
                   type="checkbox"
                   class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
                 />
-                <span class="text-gray-800 font-semibold text-sm"
+                <span class="text-gray-800 font-semibold text-sm task-title"
                   >جلسه با مدیران پروژه</span
                 >
                 <img
@@ -441,8 +442,8 @@
             ۳ <span class="font-normal"> تسک انجام شده است. </span>
           </h5>
         </article>
-        <!-- Done Tasks -->
-        <ul>
+        <!-- Done task list -->
+        <ul id="done-list">
           <li
             class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
           >
@@ -527,4 +528,5 @@
     </main>
   </body>
   <script type="module" src="/src/main.js"></script>
+  <script type="module" src="deleteTask.js"></script>
 </html>
