@@ -66,6 +66,7 @@
   --color-Neutral-200: #f5f6f8;
   --color-Neutral-700: #7d7d7f;
 
+  --color-Oil02: #ebedef;
   --color-Oil04: #cccccc;
 
   /* fonts */
@@ -77,6 +78,7 @@
   /* default styles  */
   * {
     @apply scroll-smooth;
+    @apply transition-colors duration-150 ease-in-out;
   }
 
   body {
@@ -99,7 +101,11 @@
   }
 
   .nav-group {
-    @apply flex flex-row-reverse justify-end items-center w-[calc(100%-2rem)] mx-auto px-3 py-2 gap-2 hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg transition-colors;
+    @apply w-full text-base font-bold flex flex-row-reverse justify-end px-5 py-3 gap-4 hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg;
+  }
+
+  .nav-group-active {
+    @apply w-full text-primary dark:text-on-background-dark dark:bg-hover-dark text-base font-bold flex flex-row-reverse justify-end px-5 py-3 gap-4 bg-hover-light dark:hover:bg-hover-dark rounded-lg;
   }
 
   .icon-sm {
