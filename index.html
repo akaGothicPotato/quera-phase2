@@ -21,7 +21,7 @@
           class="relative flex justify-between items-center p-3 small dark:bg-nav-dark m-3 rounded-lg shadow-blur"
         >
           <li class="flex-1 text-center font-bold text-base">کوئرا لیست</li>
-          <li id="trigram" class="absolute right-3 top-3">
+          <li id="trigram" class="cursor-pointer absolute right-3 top-3">
             <img
               class="dark:hidden"
               src="./src/svgs light mode/menu.svg"
@@ -48,7 +48,7 @@
             id="nave-mobile-head"
           >
             <h2 class="font-bold text-base">کوئرا لیست</h2>
-            <div id="closeNav">
+            <div id="closeNav" class="cursor-pointer">
               <img
                 class="w-6 h-6 dark:hidden"
                 src="./src/svgs light mode/close-circle.svg"
@@ -91,7 +91,7 @@
         </li>
         <li class="mb-4">
           <button
-            class="w-full text-primary dark:text-on-background-dark dark:bg-hover-dark text-base font-bold flex flex-row-reverse justify-end px-5 py-3 gap-4 hover:bg-hover-light bg-hover-light dark:hover:bg-hover-dark rounded-lg"
+            class="cursor-pointer w-full text-primary dark:text-on-background-dark dark:bg-hover-dark text-base font-bold flex flex-row-reverse justify-end px-5 py-3 gap-4 hover:bg-hover-light bg-hover-light dark:hover:bg-hover-dark rounded-lg"
           >
             <p>خانه</p>
             <img
@@ -223,7 +223,7 @@
             <button
               type="button"
               id="theme-light"
-              class="bg-btn-group-active-light dark:bg-transparent dark:hover:bg-btn-group-active-dark rounded-md inline-flex gap-3 px-4 py-1.5"
+              class="cursor-pointer bg-btn-group-active-light dark:bg-transparent dark:hover:bg-btn-group-active-dark rounded-md inline-flex gap-3 px-4 py-1.5"
             >
               <img
                 src="./src/svgs light mode/sun.svg"
@@ -242,7 +242,7 @@
             <button
               type="button"
               id="theme-dark"
-              class="bg-transparent dark:bg-btn-group-active-dark rounded-md inline-flex gap-3 px-4 py-1.5"
+              class="cursor-pointer bg-transparent hover:bg-btn-group-active-light dark:hover:bg-btn-group-active-dark dark:bg-btn-group-active-dark rounded-md inline-flex gap-3 px-4 py-1.5"
             >
               <img
                 src="./src/svgs light mode/moon.svg"
@@ -304,133 +304,124 @@
         <!-- tasks status -->
         <article>
           <h4 class="text-right font-extrabold text-base">تسک‌های امروز</h4>
-          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
-            <!-- ۳ باید در نهایت با توجه به تعداد متغیر صحیح جایگذین شود -->
-            ۳ <span class="font-normal"> تسک را باید انجام دهید. </span>
+          <h5
+            id="tasksCount"
+            class="text-Neutral-700 text-right font-extrabold text-xs"
+          >
+            0
+            <span class="font-normal"> تسک را باید انجام دهید. </span>
           </h5>
         </article>
         <!-- add new task -->
         <article
-          id="addTaskInitiate"
+          id="createTaskBtn"
           class="relative my-4 p-4 inline-flex gap-2 border-dashed border border-Oil04 rounded-[10px] dark:bg-bg-nav-dark dark:border-bg-border-dashed-dark w-full"
         >
-          <img class="img" src="./src/svgs light mode/add.svg" alt="add" />
+          <img
+            class="img cursor-pointer"
+            src="./src/svgs light mode/add.svg"
+            alt="add"
+          />
           <h6
-            class="absolute right-12 top-4.5 text-sm font-semibold text-primary"
+            class="cursor-pointer absolute right-12 top-4.5 text-sm font-semibold text-primary"
           >
             افزودن وظیفه جدید
           </h6>
         </article>
+        <form
+          id="taskForm"
+          class="hidden divide-Neutral-250 divide-y-0 relative my-4 border border-Neutral-250 rounded-xl dark:bg-bg-nav-dark dark:border-hidden shadow-blur"
+        >
+          <div class="flex flex-col mt-4 mx-4">
+            <article class="flex flex-col border-b border-Neutral-250">
+              <input
+                type="text"
+                class="mb-2 text-sm font-semibold text-Neutral-700"
+                id="taskName"
+                placeholder="نام تسک"
+                required
+              />
+              <input
+                class="text-xs font-normal text-Neutral-600"
+                id="taskDescription"
+                placeholder="توضیحات"
+                required
+              />
+              <div
+                id="tag-container"
+                class="max-w-18 cursor-pointer inline-flex gap-1 px-2 py-1 my-6 border border-Neutral-250 rounded-sm"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.812 2.567h7.627c.453 0 1.02.313 1.26.7l2.787 4.453c.266.433.24 1.113-.067 1.52l-3.453 4.6c-.247.327-.78.593-1.187.593H2.812c-1.167 0-1.873-1.28-1.26-2.273L3.4 9.207c.246-.394.246-1.034 0-1.427L1.552 4.827c-.613-.98.1-2.26 1.26-2.26"
+                    stroke="#AFAEB2"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <h6 class="text-xs font-semibold text-Neutral-600">تگ ها</h6>
+              </div>
+              <div
+                id="addTags"
+                class="hidden max-w-[214px] mb-6 text-xs font-bold border border-Neutral-250 rounded-lg"
+              >
+                <div class="my-2.5 mr-2.5 ml-4">
+                  <button
+                    id="low"
+                    data-tag="low"
+                    class="color-tag cursor-pointer text-low bg-bg-low px-2 py-0.5 rounded-sm"
+                    type="button"
+                  >
+                    پایین
+                  </button>
+                </div>
+                <div class="my-2.5 px-4 border-x border-Neutral-250">
+                  <button
+                    id="medium"
+                    data-tag="medium"
+                    class="color-tag cursor-pointer text-medium bg-bg-medium px-2 py-0.5 rounded-sm"
+                    type="button"
+                  >
+                    متوسط
+                  </button>
+                </div>
+                <div class="my-2.5 ml-2.5 mr-4">
+                  <button
+                    id="high"
+                    data-tag="high"
+                    class="color-tag selected cursor-pointer text-high bg-bg-high px-2 py-0.5 rounded-sm"
+                    type="button"
+                  >
+                    بالا
+                  </button>
+                </div>
+              </div>
+            </article>
+            <div class="inline-flex gap-1.5 py-4 self-end">
+              <img
+                id="close-add"
+                class="cursor-pointer size-8.5 p-1.5 bg-bg-close rounded-md"
+                src="./src/svgs light mode/close-circle.svg"
+                alt=""
+              />
+              <button
+                type="submit"
+                class="cursor-pointer py-1.5 px-4 rounded-md border bg-primary text-on-primary-light text-xs font-semibold"
+              >
+                اضافه کردن تسک
+              </button>
+            </div>
+          </div>
+        </form>
         <!-- tasks list -->
-        <ul>
-          <li
-            class="relative mb-4 border border-Neutral-250 rounded-[10px] dark:bg-bg-nav-dark dark:border-hidden w-full shadow-blur"
-          >
-            <div
-              class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-high"
-            ></div>
-            <div class="py-3 pl-4 pr-6">
-              <!-- task title + checkbox + task options -->
-              <div class="flex gap-4 mb-1">
-                <input
-                  type="checkbox"
-                  class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
-                />
-                <span class="text-gray-800 font-semibold text-sm"
-                  >جلسه با مدیران پروژه</span
-                >
-                <img
-                  class="mr-auto cursor-pointer"
-                  src="./src/svgs light mode/Frame 33317.svg"
-                  alt="more_options"
-                />
-              </div>
-              <!-- priority of task -->
-              <div class="mb-4">
-                <span
-                  class="mr-9 bg-bg-high text-high text-[10px] font-semibold rounded-sm px-2 py-0.5"
-                  >بالا</span
-                >
-              </div>
-              <!-- task description -->
-              <p class="mr-9 text-Neutral-700 text-xs">
-                جلسه با محسن یگانه و مریم جلالی
-              </p>
-            </div>
-          </li>
-
-          <li
-            class="relative mb-4 border border-Neutral-250 rounded-[10px] dark:bg-bg-nav-dark dark:border-hidden w-full shadow-blur"
-          >
-            <div
-              class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-medium"
-            ></div>
-            <div class="py-3 pl-4 pr-6">
-              <!-- task title + checkbox + task options -->
-              <div class="flex gap-4 mb-1">
-                <input
-                  type="checkbox"
-                  class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
-                />
-                <span class="text-gray-800 font-semibold text-sm"
-                  >خرید میوه و سبزیجات و لبنیات برای خانه</span
-                >
-                <img
-                  class="mr-auto cursor-pointer"
-                  src="./src/svgs light mode/Frame 33317.svg"
-                  alt="more_options"
-                />
-              </div>
-              <!-- priority of task -->
-              <div class="mb-4">
-                <span
-                  class="mr-9 bg-bg-medium text-medium text-[10px] font-semibold rounded-sm px-2 py-0.5"
-                  >متوسط</span
-                >
-              </div>
-              <!-- task description -->
-              <p class="mr-9 text-Neutral-700 text-xs">
-                سوپرمارکت یاران دریایی
-              </p>
-            </div>
-          </li>
-
-          <li
-            class="relative mb-4 border border-Neutral-250 rounded-xl dark:bg-bg-nav-dark dark:border-hidden w-full shadow-blur"
-          >
-            <div
-              class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg bg-low"
-            ></div>
-            <div class="py-3 pl-4 pr-6">
-              <!-- task title + checkbox + task options -->
-              <div class="flex gap-4 mb-1">
-                <input
-                  type="checkbox"
-                  class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task_checkbox"
-                />
-                <span class="text-gray-800 font-semibold text-sm"
-                  >جلسه با مدیران پروژه</span
-                >
-                <img
-                  class="mr-auto cursor-pointer"
-                  src="./src/svgs light mode/Frame 33317.svg"
-                  alt="more_options"
-                />
-              </div>
-              <!-- priority of task -->
-              <div class="mb-4">
-                <span
-                  class="mr-9 bg-bg-low text-low text-[10px] font-semibold rounded-sm px-2 py-0.5"
-                  >پایین</span
-                >
-              </div>
-              <!-- task description -->
-              <p class="mr-9 text-Neutral-700 text-xs">
-                جلسه با محسن یگانه و مریم جلالی
-              </p>
-            </div>
-          </li>
-        </ul>
+        <ul id="tasksContainer"></ul>
       </section>
       <!-- Done Tasks -->
       <section class="mx-4">

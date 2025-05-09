@@ -61,6 +61,7 @@
   --color-btn-group-active-dark: #002247;
 
   /* Neutral colors */
+  --color-Neutral-100: #ebedef;
   --color-Neutral-200: #f5f6f8;
   --color-Neutral-250: #e9e9e9;
   --color-Neutral-600: #afaeb2;
@@ -99,6 +100,10 @@
 @layer utilities {
   .small {
     @apply lg:hidden;
+  }
+
+  .selected {
+    @apply border;
   }
 
   .large {
