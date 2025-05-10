@@ -5,9 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function: to move a task to the other list and update styling
   function moveTask(listItem, targetList, shouldLineThrough) {
     targetList.appendChild(listItem);
-    const taskTitle = listItem.querySelector(".task-title");
+    const taskTitle = listItem.querySelector("#task-title");
+    const priorityDiv = listItem.querySelector("#priority");
+    const descriptionParagraph = listItem.querySelector("#description");
+
     if (taskTitle) {
       taskTitle.classList.toggle("line-through", shouldLineThrough);
+    }
+
+    // Hide priority and description if moving to Done, show if moving back to To Do
+    if (targetList === doneList) {
+      if (priorityDiv) {
+        priorityDiv.style.display = "none";
+      }
+      if (descriptionParagraph) {
+        descriptionParagraph.style.display = "none";
+      }
+    } else {
+      if (priorityDiv) {
+        priorityDiv.style.display = "";
+      }
+      if (descriptionParagraph) {
+        descriptionParagraph.style.display = "";
+      }
     }
   }
 
