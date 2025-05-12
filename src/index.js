@@ -314,6 +314,7 @@ if (localStorage.getItem("darkMode") === "true") {
 
 createTaskBtn.addEventListener("click", () => {
   form.classList.remove("hidden");
+  formContainer.append(form);
   createTaskBtn.classList.replace("inline-flex", "hidden");
   Artboard.classList.replace("flex", "hidden");
   editingTaskElement = null;
