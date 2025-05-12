@@ -24,6 +24,7 @@ const tasksCount = document.getElementById("tasksCount"); // Element showing tas
 const Artboard = document.getElementById("Artboard"); // Artboard/empty state container
 const taskNameInput = document.getElementById("taskName"); // Input for task name
 const taskDescInput = document.getElementById("taskDescription"); // Input for task description
+const formContainer = document.getElementById("form-container");
 
 // Edit tracking
 let editingTaskElement = null; // Stores the task element being edited (null when creating new task)
@@ -196,7 +197,7 @@ function attachTaskEvents(taskElement) {
     taskNameInput.value = name;
     taskDescInput.value = desc;
     form.classList.remove("hidden");
-    createTaskBtn.classList.replace("inline-flex", "hidden");
+    taskElement.append(form);
     Artboard.classList.replace("flex", "hidden");
     editingTaskElement = taskElement;
   });
@@ -225,6 +226,7 @@ darkMode.addEventListener("click", () => htmlClasses.toggle("dark"));
 // Show task form when create task button clicked
 createTaskBtn.addEventListener("click", () => {
   form.classList.remove("hidden");
+  formContainer.append(form);
   createTaskBtn.classList.replace("inline-flex", "hidden");
   Artboard.classList.replace("flex", "hidden");
 });
