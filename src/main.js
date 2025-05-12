@@ -1,9 +1,11 @@
 // functions will be added here
 
-// const tasksCount = document.getElementById("taskscontainer").childElementCount;
-// document.getElementById(
-//   "tasksCount"
-// ).textContent = `${tasksCount} تسک را باید انجام دهید.`;
+// set up dynamic time stamp:
+import { getFormattedPersianDate } from "./formatDate.js";
+import { renderDateToElements } from "./renderDate.js";
+
+const formattedDate = getFormattedPersianDate();
+renderDateToElements(formattedDate);
 
 // nav handle start
 // DOM elements
@@ -104,8 +106,8 @@ class Task {
     <div class="max-md:py-3 max-md:px-4 md:px-5 md:py-6">
       <!-- task title + checkbox + task options -->
       <div class="relative flex gap-4 mb-1">
-        <input type="checkbox" class="w-4 h-4 rounded-sm border-Oil04
-        accent-primary dark:border-on-primary-light task-checkbox" ${
+        <input id="task-checkbox" type="checkbox" class="w-4 h-4 rounded-sm border-Oil04
+        accent-primary dark:border-on-primary-light" ${
           this.isCompleted ? "checked" : ""
         }>
         <span class="text-gray-800 font-semibold text-sm"
@@ -130,12 +132,12 @@ class Task {
             <img
               class="size-6 dark:hidden"
               src="./src/svgs light mode/tabler_trash-x.svg"
-              alt="edit-btn"
+              alt="trash-btn"
             />
             <img
               class="size-6 hidden dark:block"
               src="./src/svgs dark mode/tabler_trash-x.svg"
-              alt="edit-btn"
+              alt="trash-btn"
             />
           </div>
           <div
@@ -169,7 +171,9 @@ class Task {
     </div>
   </div>
         `;
+
     createTaskBtn.classList.replace("inline-flex", "hidden");
+
     const moreOptions = taskElement.querySelector("#more_options");
     moreOptions.addEventListener("click", () => {
       const optionBTN = taskElement.querySelector("#more-options-btns");
@@ -181,8 +185,38 @@ class Task {
       }
     });
 
+    const removeBtn = taskElement.querySelector("#trash-btn");
+    removeBtn.onclick = function () {
+      const container = document.getElementById("tasksContainer");
+      container.removeChild(taskElement);
+
+      updateTaskCount();
+    };
+
+    taskElement
+      .querySelector("#task-checkbox")
+      .addEventListener("change", (e) => {
+        this.isCompleted = e.target.checked;
+        taskElement.classList.toggle("completed", this.isCompleted);
+        const doneTasksContainer =
+          document.getElementById("doneTasksContainer");
+        doneTasksContainer.appendChild(taskElement);
+      });
+
+    updateTaskCount();
+
     return taskElement;
   }
+}
+
+function updateTaskCount() {
+  const container = document.getElementById("tasksContainer");
+  const countDisplay = document.getElementById("tasksCount");
+
+  const formattedCount = container.childElementCount
+    .toString()
+    .replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+  countDisplay.textContent = `${formattedCount} تسک را باید انجام دهید.`;
 }
 
 // Toggle form visibility
@@ -191,6 +225,7 @@ const form = document.getElementById("taskForm");
 createTaskBtn.addEventListener("click", () => {
   form.classList.remove("hidden");
   createTaskBtn.classList.replace("inline-flex", "hidden");
+  Artboard.classList.replace("flex", "hidden");
 });
 
 const closeAdd = document.getElementById("close-add");
@@ -218,6 +253,7 @@ colorTags.forEach((tag) => {
     colorTags.forEach((t) => t.classList.remove("selected"));
     // Add 'selected' to clicked tag
     tag.classList.add("selected");
+
     selectedTag = tag.dataset.tag;
   });
 });
@@ -228,6 +264,7 @@ document.getElementById("taskForm").addEventListener("submit", (e) => {
 
   const name = document.getElementById("taskName").value;
   const desc = document.getElementById("taskDescription").value;
+  const Artboard = document.getElementById("Artboard");
 
   const task = new Task(name, desc, selectedTag);
   task.domElement = task.createTask();
@@ -235,4 +272,5 @@ document.getElementById("taskForm").addEventListener("submit", (e) => {
 
   // Reset and hide form
   form.reset();
+  // Artboard.classList.replace("hidden", "flex");
 });

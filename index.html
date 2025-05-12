@@ -11,7 +11,7 @@
     <title>کوئرا لیست</title>
   </head>
   <body
-    class="relative md:grid md:grid-cols-[272px_minmax(auto,744px)] md:gap-10"
+    class="relative md:grid md:grid-cols-[320px_minmax(auto,744px)] md:gap-50"
   >
     <header class="md:hidden sticky top-0">
       <nav id="nav">
@@ -90,23 +90,24 @@
           </div>
         </li>
         <li class="mb-4">
-          <button
-            class="cursor-pointer w-full text-primary dark:text-on-background-dark dark:bg-hover-dark text-base font-bold flex flex-row-reverse justify-end px-5 py-3 gap-4 hover:bg-hover-light bg-hover-light dark:hover:bg-hover-dark rounded-lg"
-          >
-            <p>خانه</p>
-            <img
-              src="./src/svgs light mode/home-2.svg"
-              alt="home"
-              id="home-icon-light"
-              class="dark:hidden"
-            />
-            <img
-              src="./src/svgs dark mode/home-2.svg"
-              alt="home"
-              id="home-icon-dark"
-              class="hidden dark:block"
-            />
-          </button>
+          <a href="./index.html">
+            <button
+              class="cursor-pointer w-full text-primary dark:text-on-background-dark dark:bg-hover-dark text-base font-bold flex flex-row-reverse justify-end px-5 py-3 gap-4 hover:bg-hover-light bg-hover-light dark:hover:bg-hover-dark rounded-lg"
+            >
+              <p>خانه</p>
+              <img
+                src="./src/svgs light mode/home-2.svg"
+                alt="home"
+                id="home-icon-light"
+                class="dark:hidden"
+              />
+              <img
+                src="./src/svgs dark mode/home-2.svg"
+                alt="home"
+                id="home-icon-dark"
+                class="hidden dark:block"
+              /></button
+          ></a>
         </li>
         <li class="mb-4">
           <button class="nav-group">
@@ -218,7 +219,7 @@
           <div
             id="themeing"
             role="group"
-            class="flex bg-btn-group-light dark:bg-btn-group-dark p-1 rounded-lg gap-1"
+            class="flex bg-btn-group-light dark:bg-btn-group-dark p-1 rounded-lg gap-1 justify-center"
           >
             <button
               type="button"
@@ -278,7 +279,10 @@
         </button>
       </section>
     </aside>
-    <main id="main" class="md:col-start-2 md:justify-self-center px-4 md:px-0">
+    <main
+      id="main"
+      class="md:col-start-2 md:justify-self-center px-4 md:px-0 w-full md:mt-20"
+    >
       <article
         class="md:hidden mx-4 my-6 pb-5 border-b border-Neutral-200 dark:border-none"
       >
@@ -293,6 +297,7 @@
               سلام، رویا
             </h4>
             <h5
+              id="date1"
               class="text-Neutral-700 text-right font-semibold text-sm col-span-3"
             >
               امروز، سه‌شنبه، ۵ بهمن ۱۴۰۲
@@ -303,12 +308,14 @@
       <section class="my-8 mx-4">
         <!-- tasks status -->
         <article>
-          <h4 class="text-right font-extrabold text-base">تسک‌های امروز</h4>
+          <h4 class="text-right font-extrabold text-base md:text-xl">
+            تسک‌های امروز
+          </h4>
           <h5
             id="tasksCount"
             class="text-Neutral-700 text-right font-extrabold text-xs"
           >
-            0
+            ۰
             <span class="font-normal"> تسک را باید انجام دهید. </span>
           </h5>
         </article>
@@ -328,28 +335,44 @@
             افزودن وظیفه جدید
           </h6>
         </article>
+        <article id="Artboard" class="flex flex-col justify-center mx-4 my-10">
+          <img
+            class="mx-auto"
+            src="./src/2143202_Artboard 1.svg"
+            alt="Artboard"
+          />
+
+          <h4
+            class="mt-6 mb-2 text-base font-extrabold text-center text-Neutral-700"
+          >
+            چه کارهایی امروز برای انجام داری؟
+          </h4>
+          <h6 class="text-sm font-semibold text-center text-Neutral-600">
+            میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+          </h6>
+        </article>
         <form
           id="taskForm"
-          class="hidden divide-Neutral-250 divide-y-0 relative my-4 border border-Neutral-250 rounded-xl dark:bg-bg-nav-dark dark:border-hidden shadow-blur"
+          class="hidden divide-Neutral-250 divide-y-0 relative my-4 border border-Neutral-250 rounded-xl dark:bg-bg-nav-dark dark:border-Dark-border-form shadow-blur"
         >
           <div class="flex flex-col mt-4 mx-4">
-            <article class="flex flex-col border-b border-Neutral-250">
+            <article
+              class="flex flex-col border-b border-Neutral-250 dark:border-Dark-border-form"
+            >
               <input
                 type="text"
-                class="mb-2 text-sm font-semibold text-Neutral-700"
+                class="mb-2 text-sm md:text-base font-semibold text-Neutral-700"
                 id="taskName"
                 placeholder="نام تسک"
-                required
               />
               <input
-                class="text-xs font-normal text-Neutral-600"
+                class="text-xs md:text-sm font-normal text-Neutral-600"
                 id="taskDescription"
                 placeholder="توضیحات"
-                required
               />
               <div
                 id="tag-container"
-                class="max-w-18 cursor-pointer inline-flex gap-1 px-2 py-1 my-6 border border-Neutral-250 rounded-sm"
+                class="max-md:max-w-18 md:max-w-20 cursor-pointer inline-flex gap-1 px-2 py-1 my-6 border border-Neutral-250 dark:border-Dark-border-tags rounded-sm"
               >
                 <svg
                   width="16"
@@ -366,11 +389,13 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <h6 class="text-xs font-semibold text-Neutral-600">تگ ها</h6>
+                <h6 class="text-xs md:text-sm font-semibold text-Neutral-600">
+                  تگ ها
+                </h6>
               </div>
               <div
                 id="addTags"
-                class="hidden max-w-[214px] mb-6 text-xs font-bold border border-Neutral-250 rounded-lg"
+                class="hidden max-w-[214px] md:max-w-58 mb-6 text-xs md:text-sm font-bold dark:bg-Dark-bg-tags border border-Neutral-250 dark:border-Dark-border-tags rounded-lg"
               >
                 <div class="my-2.5 mr-2.5 ml-4">
                   <button
@@ -413,7 +438,7 @@
               />
               <button
                 type="submit"
-                class="cursor-pointer py-1.5 px-4 rounded-md border bg-primary text-on-primary-light text-xs font-semibold"
+                class="cursor-pointer py-1.5 px-4 rounded-md border dark:border-Dark-border-form bg-primary text-on-primary-light dark:bg-btn-group-active-dark text-xs md:text-sm font-semibold"
               >
                 اضافه کردن تسک
               </button>
@@ -427,95 +452,22 @@
       <section class="mx-4">
         <!-- head -->
         <article class="mb-4">
-          <h4 class="text-right font-extrabold text-base">تسک‌های انجام شده</h4>
-          <h5 class="text-Neutral-700 text-right font-extrabold text-xs">
+          <h4
+            class="text-right font-extrabold text-base md:text-xl dark:text-surface-light"
+          >
+            تسک‌های انجام شده
+          </h4>
+          <h5
+            id="doneTasksCount"
+            class="text-Neutral-700 text-right font-extrabold text-xs"
+          >
             ۳ <span class="font-normal"> تسک انجام شده است. </span>
           </h5>
         </article>
         <!-- Done Tasks -->
-        <ul>
-          <li
-            class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
-          >
-            <div
-              class="absolute top-2 right-0 bottom-2 w-1 rounded-l-lg bg-medium"
-            ></div>
-
-            <div
-              class="flex flex-row items-center justify-start px-4 py-5 gap-4"
-            >
-              <!-- dark bordor color? -->
-              <input
-                checked
-                class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light"
-                type="checkbox"
-              />
-              <p class="font-semibold text-sm line-through">
-                خرید میوه و سبزیجات و لبنیات برای خانه
-              </p>
-              <!-- align? dark icon color ? -->
-              <img
-                class="mr-auto"
-                src="./src/svgs light mode/Frame 33317.svg"
-                alt=""
-              />
-            </div>
-          </li>
-
-          <li
-            class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
-          >
-            <div
-              class="absolute top-2 right-0 bottom-2 w-1 rounded-l-lg bg-high"
-            ></div>
-
-            <div
-              class="flex flex-row items-center justify-start px-4 py-5 gap-4"
-            >
-              <input
-                checked
-                class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light"
-                type="checkbox"
-              />
-              <p class="font-semibold text-sm line-through">
-                تماس با مبل فروشی در مورد تاخیر در ارسال
-              </p>
-              <img
-                class="mr-auto"
-                src="./src/svgs light mode/Frame 33317.svg"
-                alt=""
-              />
-            </div>
-          </li>
-
-          <li
-            class="mb-4 relative border border-Neutral-200 rounded-xl w-full dark:border-hidden dark:bg-bg-nav-dark"
-          >
-            <div
-              class="absolute top-2 right-0 bottom-2 w-1 rounded-l-lg bg-low"
-            ></div>
-
-            <div
-              class="flex flex-row items-center justify-start px-4 py-5 gap-4"
-            >
-              <input
-                checked
-                class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-Oil04"
-                type="checkbox"
-              />
-              <p class="font-semibold text-sm line-through">
-                جلسه با مرتضی در مورد مصاحبه با کارآموز ادمین پنل
-              </p>
-              <img
-                class="mr-auto"
-                src="./src/svgs light mode/Frame 33317.svg"
-                alt=""
-              />
-            </div>
-          </li>
-        </ul>
+        <ul id="doneTasksContainer"></ul>
       </section>
     </main>
   </body>
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/index.js"></script>
 </html>

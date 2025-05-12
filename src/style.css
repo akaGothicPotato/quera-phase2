@@ -59,6 +59,7 @@
   --color-btn-group-light: #f7f7f7;
   --color-btn-group-active-light: #ffffff;
   --color-btn-group-active-dark: #002247;
+  --color-task-desc-dark: #848890;
 
   /* Neutral colors */
   --color-Neutral-100: #ebedef;
@@ -68,6 +69,9 @@
   --color-Neutral-700: #7d7d7f;
   --color-bg-close: #f5f5f5;
   --color-Dark-border: #2f3132;
+  --color-Dark-border-tags: #293242;
+  --color-Dark-bg-tags: #0b192d;
+  --color-Dark-border-form: #3d3d3d;
 
   --color-Oil04: #cccccc;
   --color-Oil06: #808080;
@@ -98,12 +102,17 @@
 }
 
 @layer utilities {
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
   .small {
     @apply lg:hidden;
   }
 
   .selected {
-    @apply border;
+    @apply border-4;
   }
 
   .large {

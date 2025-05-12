@@ -1,0 +1,75 @@
+<div
+  class="relative mb-4 border border-Neutral-250 rounded-xl dark:bg-bg-nav-dark dark:border-hidden w-full shadow-blur"
+>
+  <div
+    class="absolute top-2 -right-px bottom-2 w-1 rounded-l-lg ${tagInfo.barColorClass}"
+  ></div>
+  <div class="max-md:py-3 max-md:px-4 md:px-5 md:py-6">
+    <div class="relative flex gap-4 mb-1">
+      <input
+        type="checkbox"
+        class="w-4 h-4 rounded-sm border-Oil04 accent-primary dark:border-on-primary-light task-checkbox"
+      />
+      <span
+        id="Name"
+        class="text-gray-800 font-semibold text-sm md:text-base dark:text-surface-light"
+      >
+        ${name}
+        <span
+          class="max-md:hidden mr-3 ${tagInfo.bgColorClass} ${tagInfo.textColorClass} text-[10px] md:text-xs font-semibold rounded-sm px-2 py-0.5"
+          >${tagInfo.text}</span
+        >
+      </span>
+      <img
+        class="more-options-toggle mr-auto cursor-pointer"
+        src="./src/svgs light mode/Frame 33317.svg"
+        alt="more options"
+        title="More Options"
+      />
+      <div
+        class="more-options hidden absolute top-6 -left-1 rounded-lg border border-Neutral-100 dark:border-Dark-border-tags"
+      >
+        <div id="trash-btn" class="delete-task cursor-pointer m-[5px]">
+          <img
+            class="size-6 dark:hidden"
+            src="./src/svgs light mode/tabler_trash-x.svg"
+            alt="delete"
+            title="Delete Task"
+          />
+          <img
+            class="size-6 hidden dark:block"
+            src="./src/svgs dark mode/tabler_trash-x.svg"
+            alt="delete"
+          />
+        </div>
+        <div
+          id="edit-btn"
+          class="edit-task cursor-pointer m-[5px] pr-2.5 border-r border-Neutral-100 dark:border-Dark-border-tags"
+        >
+          <img
+            class="size-6 dark:hidden"
+            src="./src/svgs light mode/tabler_edit.svg"
+            alt="edit"
+            title="Edit Task"
+          />
+          <img
+            class="size-6 hidden dark:block"
+            src="./src/svgs dark mode/tabler_edit.svg"
+            alt="edit"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <span
+        class="md:hidden mr-9 ${tagInfo.bgColorClass} ${tagInfo.textColorClass} text-[10px] md:text-xs font-semibold rounded-sm px-2 py-0.5"
+        >${tagInfo.text}</span
+      >
+    </div>
+    <p
+      class="mr-9 text-Neutral-700 text-xs md:text-sm dark:text-task-desc-dark"
+    >
+      ${description}
+    </p>
+  </div>
+</div>
