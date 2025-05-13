@@ -407,7 +407,9 @@
                     پایین
                   </button>
                 </div>
-                <div class="my-2.5 px-4 border-x border-Neutral-250">
+                <div
+                  class="my-2.5 px-4 border-x border-Neutral-250 dark:border-Dark-border-form"
+                >
                   <button
                     id="medium"
                     data-tag="medium"
@@ -430,16 +432,22 @@
               </div>
             </article>
             <div class="inline-flex gap-1.5 py-4 self-end">
-              <img
-                id="close-add"
-                class="cursor-pointer size-8.5 p-1.5 bg-bg-close rounded-md"
-                src="./src/svgs light mode/close-circle.svg"
-                alt=""
-              />
+              <div id="close-add">
+                <img
+                  class="hidden dark:block cursor-pointer size-8.5 p-1.5 bg-btn-group-active-dark rounded-md"
+                  src="./src/svgs dark mode/close-circle.svg"
+                  alt=""
+                />
+                <img
+                  class="dark:hidden cursor-pointer size-8.5 p-1.5 bg-bg-close rounded-md"
+                  src="./src/svgs light mode/close-circle.svg"
+                  alt=""
+                />
+              </div>
               <button
                 id="submit"
                 type="submit"
-                class="cursor-pointer py-1.5 px-4 rounded-md border dark:border-Dark-border-form bg-primary text-on-primary-light dark:bg-btn-group-active-dark text-xs md:text-sm font-semibold"
+                class="cursor-pointer py-1.5 px-4 rounded-md border dark:border-none bg-primary text-on-primary-light dark:bg-btn-group-active-dark text-xs md:text-sm font-semibold"
               >
                 اضافه کردن تسک
               </button>
