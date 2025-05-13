@@ -102,17 +102,12 @@
 }
 
 @layer utilities {
-  .completed {
-    text-decoration: line-through;
-    opacity: 0.7;
-  }
-
   .small {
     @apply lg:hidden;
   }
 
   .selected {
-    @apply border-4;
+    @apply inset-ring-2;
   }
 
   .large {
