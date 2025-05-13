@@ -305,7 +305,7 @@
           </div>
         </div>
       </article>
-      <section class="my-8 mx-4">
+      <section id="form-container" class="my-8 mx-4">
         <!-- tasks status -->
         <article>
           <h4 class="text-right font-extrabold text-base md:text-xl">
@@ -361,7 +361,7 @@
             >
               <input
                 type="text"
-                class="mb-2 text-sm md:text-base font-semibold text-Neutral-700"
+                class="decoration-0 mb-2 text-sm md:text-base font-semibold text-Neutral-700"
                 id="taskName"
                 placeholder="نام تسک"
               />
@@ -437,6 +437,7 @@
                 alt=""
               />
               <button
+                id="submit"
                 type="submit"
                 class="cursor-pointer py-1.5 px-4 rounded-md border dark:border-Dark-border-form bg-primary text-on-primary-light dark:bg-btn-group-active-dark text-xs md:text-sm font-semibold"
               >
@@ -446,6 +447,8 @@
           </div>
         </form>
         <!-- tasks list -->
+      </section>
+      <section class="my-8 mx-4">
         <ul id="tasksContainer"></ul>
       </section>
       <!-- Done Tasks -->
@@ -461,7 +464,7 @@
             id="doneTasksCount"
             class="text-Neutral-700 text-right font-extrabold text-xs"
           >
-            ۳ <span class="font-normal"> تسک انجام شده است. </span>
+            ۰ <span class="font-normal"> تسک انجام شده است. </span>
           </h5>
         </article>
         <!-- Done Tasks -->
